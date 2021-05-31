@@ -18,21 +18,25 @@ def wallis(n):
     return pi
 
 
-
 def monte_carlo(n):
-    circle_points=0
-    square_points=0
-    for i in range(n**2):
-        rand_x=random.uniform(-1,1)
-        rand_y=random.uniform(-1,1)
+ circle_points=0
+ square_points=0
+ for i in range(n):
+    rand_x=random.random()
+    rand_y=random.random()
+    
+
     orig_dist=rand_x**2 + rand_y**2
     if orig_dist<=1:
         circle_points+=1
-        square_points+=1
+        
+    square_points+=1
+ 
 
-        pi= 4 * (circle_points/square_points)
-        return pi
-          
+ pi= 4 * circle_points/square_points
+ return pi
+
+
 
 
 
